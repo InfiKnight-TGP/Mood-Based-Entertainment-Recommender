@@ -6,21 +6,17 @@ from googleapiclient.errors import HttpError
 import json
 import random
 from collections import defaultdict
+from config import (
+    YOUTUBE_API_KEY,
+    YOUTUBE_API_SERVICE_NAME,
+    YOUTUBE_API_VERSION,
+    LANGUAGE_CODES
+)
 
 # Load environment variables
 load_dotenv()
 
-# Language code mapping
-LANGUAGE_CODES = {
-    "Hindi": "hi",
-    "Tamil": "ta",
-    "Telugu": "te",
-    "Kannada": "kn",
-    "Malayalam": "ml"
-}
-
 # YouTube API setup
-YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 if not YOUTUBE_API_KEY:
     st.error("YouTube API key not found. Please check your .env file.")
     st.stop()
