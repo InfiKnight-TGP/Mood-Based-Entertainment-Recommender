@@ -5,6 +5,14 @@ from collections import defaultdict
 from typing import Optional
 import os
 from dotenv import load_dotenv
+from config import (
+    TMDB_API_KEY,
+    TMDB_ACCESS_TOKEN,
+    OMDB_API_KEY,
+    TMDB_BASE_URL,
+    TMDB_HEADERS,
+    LANGUAGE_CODES
+)
 
 # Load environment variables
 load_dotenv()
@@ -16,30 +24,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# API Keys
-OMDB_API_KEY = os.getenv('OMDB_API_KEY')
-TMDB_API_KEY = os.getenv('TMDB_API_KEY')
-TMDB_ACCESS_TOKEN = os.getenv('TMDB_ACCESS_TOKEN')
-
 # TMDB Base URLs
-TMDB_BASE_URL = "https://api.themoviedb.org/3"
 TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500"
-
-# TMDB Headers for API requests
-TMDB_HEADERS = {
-    "accept": "application/json",
-    "Authorization": f"Bearer {TMDB_ACCESS_TOKEN}"
-}
-
-# Language codes for TMDB API
-LANGUAGE_CODES = {
-    "English": "en",
-    "Hindi": "hi",
-    "Tamil": "ta",
-    "Telugu": "te",
-    "Kannada": "kn",
-    "Malayalam": "ml"
-}
 
 # Genre IDs for TMDB API
 GENRES = {
