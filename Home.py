@@ -1,5 +1,16 @@
 import streamlit as st
 import streamlit.components.v1 as components
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Get API keys from environment variables
+YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+TMDB_API_KEY = os.getenv('TMDB_API_KEY')
+TMDB_ACCESS_TOKEN = os.getenv('TMDB_ACCESS_TOKEN')
+OMDB_API_KEY = os.getenv('OMDB_API_KEY')
 
 def main():
     st.set_page_config(
